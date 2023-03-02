@@ -1,0 +1,14 @@
+.categories, .tags {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+   }
+    .selected {
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: goldenrod;
+        &::before {
+          content: "\00BB";
+        }}

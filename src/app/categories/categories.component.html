@@ -1,0 +1,5 @@
+<div class="categories" *ngFor="let category of categories"
+ [ngClass]="{selected:category?.id === categoryFilter?.id}" 
+ (click)="setCategoryFilter(category)">
+    {{ category.name }}
+  </div>

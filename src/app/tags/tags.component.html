@@ -1,0 +1,7 @@
+  <div class="tags" *ngFor="let tag of tags"  
+   [ngClass]="{selected:tag?.id === tagFilter?.id}"
+    (click)="setTagFilter(tag)"
+    >
+
+      {{ tag.name }}
+    </div>
