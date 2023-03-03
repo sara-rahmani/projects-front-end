@@ -1,5 +1,17 @@
 <header>
   <h2>{{ title }}</h2>
+  <nav>
+    <span routerLink="/">Home</span> |
+    <span routerLink="/projects">Projects</span>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>&copy; {{ date.getFullYear() }} {{ author }}</footer>
+<!-- day2 -->
+<!-- <header>
+  <h2>{{ title }}</h2>
 </header>
 <body>
   <div class="container">
@@ -51,9 +63,9 @@
 
 <footer>
   <p>&copy;{{ date | date : "yyyy" }} SSD28- {{ author }}</p>
-</footer>
+</footer> -->
 
-  
+  <!-- day1 -->
 <!-- 
 <header>
   <h2>{{ title }}</h2>

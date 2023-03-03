@@ -1,7 +1,14 @@
-  <div class="tags" *ngFor="let tag of tags"  
-   [ngClass]="{selected:tag?.id === tagFilter?.id}"
-    (click)="setTagFilter(tag)"
-    >
+<!-- <div class="tags" *ngFor="let tag of tags"   
+[ngClass]="{selected:tag?.id === tagFilter?.id}" 
+(click)="setTagFilter(tag)"
+>
 
-      {{ tag.name }}
-    </div>
+  {{ tag.name }}
+</div> -->
+<div
+  class="tags"
+  *ngFor="let tag of tags"
+  routerLink="/projects/tags/{{ tag.slug }}"
+>
+  {{ tag.name }}
+</div>

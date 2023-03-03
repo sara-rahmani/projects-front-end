@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { TagService } from '../services/tag.service';
 import { Tag } from '../model/tag';
-import { TagService } from '../tag.service';
-import { Category } from '../model/category';
 
 import {  Input, Output, EventEmitter } from '@angular/core';
+
 @Component({
   selector: 'app-tags',
   templateUrl: './tags.component.html',
@@ -20,13 +20,13 @@ export class TagsComponent {
   ngOnInit(): void {
     this.getTags();
   }
+  // @Input() tagFilter: Tag | undefined;
+  // @Output() newTagFilterEvent = new EventEmitter<Tag>();
+  
+  // setTagFilter(tag: Tag) {
+  //   this.tagFilter = tag;
+  //   this.newTagFilterEvent.emit(tag);
+  // }
 
-  @Input() tagFilter: Tag | undefined;
-  @Output() newTagFilterEvent = new EventEmitter<Tag>();
 
-
-  setTagFilter(tag: Tag) {
-    this.tagFilter = tag;
-    this.newTagFilterEvent.emit(tag);
-  }
 }

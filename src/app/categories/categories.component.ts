@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CategoryService } from '../category.service';
+import { CategoryService } from '../services/category.service';
 import { Category } from '../model/category';
 import { Tag } from '../model/tag';
 
@@ -21,13 +21,13 @@ export class CategoriesComponent {
   ngOnInit(): void {
     this.getCategories();
   }
-  @Input() categoryFilter: Category | undefined;
-  @Output() newCategoryFilterEvent = new EventEmitter<Category>();
+  // @Input() categoryFilter: Category | undefined;
+  // @Output() newCategoryFilterEvent = new EventEmitter<Category>();
   
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
-    this.newCategoryFilterEvent.emit(category);
-  }
+  // setCategoryFilter(category: Category) {
+  //   this.categoryFilter = category;
+  //   this.newCategoryFilterEvent.emit(category);
+  // }
 
 
 }

@@ -1,22 +1,71 @@
- <section class="projects">
+<ng-container *ngIf="!selectedProject">
+  <div class="container">
+    <section class="projects">   
+        <div  *ngIf="filtered">
+            <button type="button" routerLink="/projects">Back</button>
 
-    <div class="project" *ngFor="let project of projects | projectFilter : tagFilter" [class.hidden]="
-      categoryFilter && project.category?.id != categoryFilter.id">
+        <h3>{{filtered}}</h3></div>
+
+      <div
+        class="project"
+        *ngFor="let project of projects"
     
-        <h4> {{ project.title | uppercase }}</h4>
-        <p> {{ project.excerpt }}</p>
+      >
+        <h4  routerLink="/projects/{{ project.id }}">{{ project.title | uppercase }}</h4>
+        <div class="proj-flex">
+          <img
+            [src]="'assets/images/mars-planet-profile.jpg'"
+            alt="mars-planet-profile"
+            style="height: 50%; width: 50%"
+          />
+          <div class="body-project">
+            <p>{{ project.excerpt }}</p>
+          </div>
+        </div>
 
         <br />
 
-        <div class="categories" *ngIf="project.category" (click)="setCategoryFilter(project.category)">
-            Category: <span>{{ project.category.name }}</span>
+        <div
+        class="categories"
+        *ngIf="project.category"
+        routerLink="/projects/categories/{{ project.category.slug }}"
+        >
+          Category: <span>{{ project.category.name }}</span>
         </div>
-        <div *ngIf="project.tags?.length">
-            Tags:
-            <span class="tags" *ngFor="let tag of project.tags" (click)="setTagFilter(tag)">
-                {{ tag.name }}
-            </span>
-        </div>
-    </div>
-</section>
+   
 
+        <div *ngIf="project.tags?.length">
+          Tags:
+          <span
+         class="tags"
+            *ngFor="let tag of project.tags"
+            routerLink="/projects/tags/{{ tag.slug }}"
+          >
+            {{ tag.name }}
+          </span>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="sidBar">
+     
+      <h4>List of Categories</h4>
+
+      <app-categories
+      
+      >
+      </app-categories>
+
+      <h4>List of Tags</h4>
+
+      <app-tags
+    
+      ></app-tags>
+    </section>
+  </div>
+</ng-container>
+<section *ngIf="selectedProject">
+  <div (click)="clearSelectedProject()">Back</div>
+  <app-project-detail project="selectedProject"></app-project-detail>
+</section>

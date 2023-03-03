@@ -1,5 +1,12 @@
-<div class="categories" *ngFor="let category of categories"
+<!-- <div class="categories" *ngFor="let category of categories"
  [ngClass]="{selected:category?.id === categoryFilter?.id}" 
  (click)="setCategoryFilter(category)">
     {{ category.name }}
-  </div>
+  </div> -->
+<div
+  class="categories"
+  *ngFor="let category of categories"
+  routerLink="/projects/categories/{{ category.slug }}"
+>
+  {{ category.name }}
+</div>

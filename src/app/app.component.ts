@@ -13,7 +13,7 @@ import { Tag } from './model/tag';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Project Front-end';
+  title = 'Showcase Portfolio project';
   date = new Date();
   author = 'Sara Rahmani';
 
@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   categoryFilter: Category | undefined;
-  
+
   setCategoryFilter(category: Category) {
     this.categoryFilter = category;
   }
