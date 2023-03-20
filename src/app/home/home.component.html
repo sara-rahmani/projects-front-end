@@ -9,11 +9,15 @@
       </p>
     </div>
   </section>
+  <p class="my-project"><strong>My</strong> Last Project</p>
+
   <section *ngIf="project" class="project">
     <article>
       <h2 class="title" routerLink="/projects/{{ project.id }}">
         {{ project.title | uppercase }}
       </h2>
+      <div [innerHTML]="project.excerpt" class="body">
+      </div>
       <div *ngIf="project.image; else elseBlock">
         <img [src]="project.image" alt="portfolio-showcase" />
       </div>
@@ -23,8 +27,7 @@
           alt="placeholder-image"
         />
       </ng-template>
-      <div [innerHTML]="project.body" class="body">
-      </div>
+     
     </article>
 
   </section>

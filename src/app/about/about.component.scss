@@ -16,10 +16,12 @@
 
     justify-content: center; /* horizontally center the content */
     align-items: center; 
+    gap:20px;
     
     .educastion-wrapper {
       display: flex;
       margin-bottom: 30px;
+      gap:10px;
       
       .education-icon {
         position: relative;
@@ -101,3 +103,9 @@ width: 90%;
       transform: translateY(0);
     }
   }
+  
+@media screen and (max-width: 650px) {
+    .education {
+    flex-direction: column;
+    }
+}
