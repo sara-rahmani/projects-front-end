@@ -1,0 +1,18 @@
+<header>
+    <!-- <h2>{{ title }}</h2> -->
+    <a routerLink="/"   class="logo"><img src='../../assets/images/logo-no-background.png'/></a>
+
+    <a  class="hamburger" id="hamburger" (click)="toggleNav()">
+    </a>
+  
+    <nav id="main-nav" [ngClass]="{'active': showNav}" (click)="closeNav()">
+        
+      <span routerLink="/" >Home</span> 
+      <span routerLink="/projects">Projects</span>
+      <span routerLink="/about">About</span>
+
+
+    </nav>
+
+  </header> 
+ 

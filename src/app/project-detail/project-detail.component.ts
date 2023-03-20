@@ -28,6 +28,7 @@ export class ProjectDetailComponent {
     this.projectService
       .getProject(id)
       .subscribe((project) => (this.project = project));
+      console.log(this.project);
   }
 
   goBack(): void {

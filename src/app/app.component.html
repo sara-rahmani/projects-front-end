@@ -1,14 +1,26 @@
-<header>
+<!-- <header>
   <h2>{{ title }}</h2>
-  <nav>
-    <span routerLink="/">Home</span> |
-    <span routerLink="/projects">Projects</span>
+  <a href="#main-nav" class="hamburger" id="hamburger" (click)="toggleNav()"><span class="hidden">Menu</span></a>
+
+  <nav id="main-nav" [ngClass]="{'active': showNav}">
+    <span routerLink="/" (click)="closeNav()">Home</span> |
+    <span routerLink="/projects" (click)="closeNav()">Projects</span>
   </nav>
-</header>
+
+</header> -->
+<app-header></app-header>
+
 <main>
+  <ul class = "socials">
+    <li><a href=""><img src="../assets/images/github.svg" alt="GitHub social link"></a></li>
+    <li><a href=""><img src="../assets/images/linkedin.svg" alt="Linkden social link"></a></li>
+    <li><a href=""><img src="../assets/images/email.svg" alt="Email social link"></a></li>
+  </ul>
   <router-outlet></router-outlet>
 </main>
-<footer>&copy; {{ date.getFullYear() }} {{ author }}</footer>
+<!-- <footer>&copy; {{ date.getFullYear() }} {{ author }}</footer> -->
+<app-footer></app-footer>
+
 <!-- day2 -->
 <!-- <header>
   <h2>{{ title }}</h2>

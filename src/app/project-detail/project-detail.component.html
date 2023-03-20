@@ -1,20 +1,26 @@
-<header>
-    <button type="button" (click)="goBack()">Back</button>
-  </header>
-<article *ngIf="project"   class="project">
-    <section>
-      <h2>{{ project.title | uppercase }}</h2>
-      <div [innerHTML]="project.body"></div>
-    </section>
-    <footer>
-      <div *ngIf="project.category">
-        Category: <span>{{ project.category.name }}</span>
-      </div>
-      <div *ngIf="project.tags?.length">
-        Tags:
-        <span *ngFor="let tag of project.tags">
-          {{ tag.name }}
-        </span>
-      </div>
-    </footer>
-  </article>
+<div class="container">
+  <button type="button" class="back" (click)="goBack()">Back</button>
+<article *ngIf="project" class="project">
+  <section>
+    <h2 class="title">{{ project.title | uppercase }}</h2>
+    <div *ngIf="project.thumb; else elseBlock">
+      <img [src]="project.thumb" alt="mars-planet-profile" />
+    </div>
+    <ng-template #elseBlock>
+      <img [src]="'assets/images/mars-planet-profile.jpg'" alt="mars-planet-profile" />
+    </ng-template>
+    <div [innerHTML]="project.body" class="body"></div>
+  </section>
+  <footer>
+    <div *ngIf="project.category">
+      Category: <span>{{ project.category.name }}</span>
+    </div>
+    <div *ngIf="project.tags?.length">
+      Tags:
+      <span *ngFor="let tag of project.tags">
+        {{ tag.name }}
+      </span>
+    </div>
+  </footer>
+</article>
+</div>

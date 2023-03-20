@@ -13,10 +13,16 @@ import { Tag } from './model/tag';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Showcase Portfolio project';
-  date = new Date();
-  author = 'Sara Rahmani';
-
+  // title = 'Showcase Portfolio project';
+  // date = new Date();
+  // author = 'Sara Rahmani';
+  // showNav: boolean = false;
+  // closeNav() {
+  //   this.showNav = false;
+  // }
+  // toggleNav() {
+  //   this.showNav = !this.showNav;
+  // }
   tagFilter: Tag | undefined;
 
   setTagFilter(tag: Tag) {

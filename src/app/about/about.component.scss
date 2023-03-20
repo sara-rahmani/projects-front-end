@@ -1,0 +1,103 @@
+         
+// .education{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+// }
+.diplomas{
+    text-align: center;
+    font-size: xxx-large;
+}
+.education {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+
+    justify-content: center; /* horizontally center the content */
+    align-items: center; 
+    
+    .educastion-wrapper {
+      display: flex;
+      margin-bottom: 30px;
+      
+      .education-icon {
+        position: relative;
+        width: 22px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        .education-line {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 2px;
+          height: 100%;
+          background-color: #ccc;
+        }
+      }
+      
+      .year {
+        color: #ccc;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+      
+      h3 {
+        color: #333;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.2;
+      }
+      
+      p {
+        color: #666;
+        font-size: 16px;
+        margin: 10px 0 0;
+      }
+    }
+  }
+  
+.header {
+    // display: flex;
+
+    // padding: 40px 0;
+    text-align: center;
+    // padding-bottom:90px;
+
+background-image: url("https://assets.website-files.com/5f4f98ba6b9aeb718ac262b8/5f50b1f768d33877e1b5a82f_wave%20(1).svg"), linear-gradient(51deg, #dce2e2, rgb(181, 132, 228));
+background-position: 50% 100%, 0px 0px;
+background-size: contain, auto;
+background-repeat: no-repeat, repeat;
+padding: 52px 5% 149px;
+width: 90%;
+  
+
+    .big-heading {
+        line-height: 1.1;
+           color: white;
+      font-size: 56px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fade-in 0.5s ease forwards 0.5s;
+    }
+  
+   
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

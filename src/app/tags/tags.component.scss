@@ -4,8 +4,15 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
+    display: inline-block;
+    margin-right: 10px;
+    &:hover{
+      background-color: rgb(241 243 244);
+    }
+    
+
    }
     .selected {
         font-size: 1.2rem;

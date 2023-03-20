@@ -1,0 +1,54 @@
+<div class="home">
+  <section class="header">
+    <div class="text">
+      <h1>Hi, my name is</h1>
+      <h2 class="big-heading">Sara Rahmani.</h2>
+      <p>
+        I’m a software developer...
+    
+      </p>
+    </div>
+  </section>
+  <section *ngIf="project" class="project">
+    <article>
+      <h2 class="title" routerLink="/projects/{{ project.id }}">
+        {{ project.title | uppercase }}
+      </h2>
+      <div *ngIf="project.image; else elseBlock">
+        <img [src]="project.image" alt="portfolio-showcase" />
+      </div>
+      <ng-template #elseBlock>
+        <img
+          [src]="'assets/images/placeholder-image.png'"
+          alt="placeholder-image"
+        />
+      </ng-template>
+      <div [innerHTML]="project.body" class="body">
+      </div>
+    </article>
+
+  </section>
+
+  <p class="my-projects"><strong>My</strong> Projects</p>
+
+  <section class="projects-home">
+  
+    <span class="arrow prev"></span>
+    <span class="arrow next"></span>
+
+    <ngx-slick-carousel
+      #slickModal="slick-carousel"
+      class="carousel"
+      [config]="slideConfig"
+    >
+      <div ngxSlickItem *ngFor="let project of projects" class="slide">
+        <div class="slide-content">
+          <h2>{{ project.title }}</h2>
+          </div>
+        <img [src]="project.image" [alt]="project.title" width="100%" />
+      
+      </div>
+    </ngx-slick-carousel>
+  </section>
+  <a routerLink="/projects" class="btn">View More Projects</a>
+</div>
