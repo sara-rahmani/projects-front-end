@@ -3,11 +3,11 @@
 <article *ngIf="project" class="project">
   <section>
     <h2 class="title">{{ project.title | uppercase }}</h2>
-    <div *ngIf="project.thumb; else elseBlock">
-      <img [src]="project.thumb" alt="mars-planet-profile" />
+    <div *ngIf="project.image; else elseBlock">
+      <img [src]="project.image" alt="mars-planet-profile" />
     </div>
     <ng-template #elseBlock>
-      <img [src]="'assets/images/mars-planet-profile.jpg'" alt="mars-planet-profile" />
+      <img [src]="'assets/images/placeholder-image.png'" alt="placeholder-image" />
     </ng-template>
     <div [innerHTML]="project.body" class="body"></div>
   </section>

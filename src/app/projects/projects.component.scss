@@ -55,6 +55,7 @@ margin:0 auto;
   }
 }
 .container{
+  
     display:flex;
     // align-items: flex-start;
     // justify-content: space-between;
@@ -98,6 +99,9 @@ flex-direction: column;
       }
       
     .project {
+      opacity: 0;
+
+      animation: fade-in 0.5s ease forwards 1.1s;
       background-image: linear-gradient(51deg, #dce2e2, rgb(188, 177, 198));
       min-width: fit-content;
 
@@ -145,6 +149,7 @@ height: auto;
       }
      
      .tags,.categories span{
+    
      width: auto;
      height: auto;
      margin:0 auto;
@@ -161,7 +166,9 @@ height: auto;
     }}
 .sidBar {
     border-radius: 20px;
-  
+    opacity: 0;
+
+      animation: fade-in 0.5s ease forwards 0.9s;
     // background-color: rgb(241 243 244);
     
       // width: 15%; /* Set width to 25% of the container width */
